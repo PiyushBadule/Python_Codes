@@ -5,11 +5,11 @@
 # Input:5
 # 2 3 6 6 5
 n = int(input())
-arr = map(int, input().split())
-A = list(arr)
-A.sort()
-B = A.count(max(A))
+arr = list(map(int, input().split()))
+arr.sort()
+B = arr.count(max(arr))
+print("B",B)
 if(B == 1):
-    print(f'runnerup is {int(A[-2])}')
+    print(f'runnerup is {int(arr[-2])}')
 else:
-    print(f'runnerup is {int(A[-1-B])}')
+    print(f'runnerup is {int(arr[-1-B])}')
