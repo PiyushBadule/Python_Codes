@@ -18,18 +18,19 @@ Each script is meticulously documented with comments to elucidate its purpose, f
 ## 🚀 Getting Started
 
 Embark on your Python adventure with these simple steps:
+  To get started with the scripts:
+    
+    ```bash
+    # Clone the Repository:
+    git clone https://github.com/PiyushBadule/Python_Codes.git
+    
+    # Navigate to the Repository:
+    cd Python_Codes
+    
+    # Run a Script (Replace <script_name> with the file you wish to run):
+    python3 "<script_name>.py"
 
-```bash
-# Clone the Repository:
-git clone https://github.com/PiyushBadule/Python_Codes.git
-
-# Navigate to the Repository:
-cd Python_Codes
-
-# Run a Script (Replace <script_name> with the file you wish to run):
-python3 "<script_name>.py"
-
-## 🛠 How to Use
+## 🛠 **How to Use**
 
 Each script in this repository is standalone, focusing on a specific concept or problem. To maximize your learning experience:
 
@@ -37,7 +38,7 @@ Each script in this repository is standalone, focusing on a specific concept or 
 - **Run and Modify**: Initially, run the scripts as they are. Then, alter them to see the effects of your changes and deepen your understanding.
 - **Practice Regularly**: Consistency is vital in coding. Regularly interact with the scripts, challenge your understanding, and apply the concepts in new ways.
 
-## 👥 Contributing
+## 👥 **Contributing**
 
 Your insights and contributions can significantly enhance this learning resource. If you have ideas for new features, improvements, or additional examples, here's how you can contribute:
 
@@ -47,7 +48,7 @@ Your insights and contributions can significantly enhance this learning resource
 - **Push to Your Branch**: `git push origin feature/YourAmazingFeature`.
 - **Open a Pull Request**: Share your contributions and become part of the community.
 
-## 👏 Acknowledgements
+## 👏 **Acknowledgements**
 
 This repository stands on the shoulders of giants. A heartfelt thanks to:
 
@@ -56,5 +57,3 @@ This repository stands on the shoulders of giants. A heartfelt thanks to:
 - **[GitHub Community](https://github.community)**: For hosting this platform and fostering collaboration and growth among developers worldwide.
 
 Together, we continue to learn, grow, and push the boundaries of what's possible. Your journey in mastering Python starts here. Dive in and start coding!
-
-
