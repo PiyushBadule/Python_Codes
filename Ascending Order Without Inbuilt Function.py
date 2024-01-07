@@ -1,24 +1,46 @@
-# Initialize array
-arr = [5, 2, 8, 7, 1]
-temp = 0
+def sort_in_ascending_order(array):
+    """
+    Sorts a given list of integers in ascending order.
 
-# Displaying elements of original array
-print("Elements of original array: ")
-for i in range(0, len(arr)):
-    print(arr[i], end=" ")
+    This function iterates through each element of the array, compares it with every other element,
+    and swaps them if they are in the wrong order, effectively sorting the whole array in ascending order.
 
-# Sort the array in ascending order
-for i in range(0, len(arr)):
-    for j in range(i + 1, len(arr)):
-        if (arr[i] > arr[j]):
-            temp = arr[i]
-            arr[i] = arr[j]
-            arr[j] = temp
+    Parameters:
+    array (list of int): The list of integers to be sorted.
 
-print()
+    Returns:
+    None: The function modifies the list in place and does not return anything.
 
-# Displaying elements of the array after sorting
+    Prints:
+    - The original elements of the array.
+    - The elements of the array after sorting in ascending order.
+    """
 
-print("Elements of array sorted in ascending order: ")
-for i in range(0, len(arr)):
-    print(arr[i], end=" ")
+    print("Elements of the original array: ")
+    print(*array)  # Print original array
+
+    # Sort the array in ascending order
+    for i in range(len(array)):
+        for j in range(i + 1, len(array)):
+            if array[i] > array[j]:
+                array[i], array[j] = array[j], array[i]  # Swap elements
+
+    print("\nElements of array sorted in ascending order: ")
+    print(*array)  # Print sorted array
+
+
+def main():
+    """
+    Main function to execute the script functionality.
+    Initializes an array, and sorts it in ascending order.
+    """
+    # Initialize array
+    array = [5, 2, 8, 7, 1]
+
+    # Call the sorting function with the array
+    sort_in_ascending_order(array)
+
+
+# Standard boilerplate to call the main() function.
+if __name__ == '__main__':
+    main()
