@@ -1,19 +1,24 @@
 class Subject:
-    # create a variable
+    """A class to represent a Subject."""
+
+    # Class variable
     favorite_subject = "Python"
 
-    # create a function
-    def favorite_subject_name(obj):
-        print("My favorite subject name is : ",
-              obj.favorite_subject)
+    @classmethod
+    def get_favorite_subject(cls):
+        """
+        Class method to print the favorite subject stored in the class variable.
+        """
+        print("My favorite subject is:", cls.favorite_subject)
 
-    # create favorite_subject_name classmethod
+
+def main():
+    """
+    Main function to execute script tasks.
+    """
+    # Calling the class method using the class name
+    Subject.get_favorite_subject()
 
 
-# before creating this line favorite_subject_name()
-# It can be called only with object not with class
-Subject.name = classmethod(Subject.favorite_subject_name)
-
-# now this method can be called as classmethod
-# favorite_subject_name() method is called as class method
-Subject.name()
+if __name__ == "__main__":
+    main()
