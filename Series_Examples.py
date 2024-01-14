@@ -1,66 +1,75 @@
 import pandas as pd
 import numpy as np
 
-# Creating the Series with list
-list_s = [1, 2, -3, 6.2, 'data']
-series1 = pd.Series(list_s)
-print(series1)
-print(type(series1))
+def create_series_examples():
+    """
+    Demonstrates various ways to create and manipulate Pandas Series.
+    Includes operations like creating Series, indexing, slicing, and basic arithmetic operations.
+    """
+    # Creating Series from a list
+    list_s = [1, 2, -3, 6.2, 'data']
+    series1 = pd.Series(list_s)
+    print("Series from list:\n", series1)
 
-# Creating the Series with Direct giving list
-series2 = pd.Series([1, 2, 3, 4, 5])
-print(series2)
+    # Creating Series directly
+    series2 = pd.Series([1, 2, 3, 4, 5])
+    print("\nSeries directly created:\n", series2)
 
-# Creating the Series and giving them Index
-series3 = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'])
-print(series3)
+    # Creating Series with custom index
+    series3 = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'])
+    print("\nSeries with custom index:\n", series3)
 
-# Creating the Series and mentioning DataType and Index
-series4 = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'], dtype=float)
-print(series4)
+    # Creating Series with specified data type
+    series4 = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'], dtype=float)
+    print("\nSeries with data type:\n", series4)
 
-# Creating the Series and mentioning DataType, Index and name
-series5 = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'], dtype=float, name='data values')
-print(series5)
+    # Creating Series with name, data type, and index
+    series5 = pd.Series([1, 2, 3, 4, 5], index=['a', 'b', 'c', 'd', 'e'], dtype=float, name='data values')
+    print("\nNamed Series:\n", series5)
 
-# Creating Series with Scalar
-scalar_s = pd.Series(0.5)
-print(scalar_s)
+    # Creating Series from a scalar
+    scalar_s = pd.Series(0.5)
+    print("\nSeries from scalar:\n", scalar_s)
 
-# Creating the Series with Scalar and Multiple index
-scalar_s = pd.Series(0.5, index=[1, 2, 3])
-print(scalar_s)
+    # Series with scalar and multiple indices
+    scalar_s = pd.Series(0.5, index=[1, 2, 3])
+    print("\nSeries with scalar and multiple indices:\n", scalar_s)
 
-# Creating the Series with Dictionary
-dict_s = pd.Series({'a': 1, 'b': 2})
-print(dict_s)
+    # Creating Series from a dictionary
+    dict_s = pd.Series({'a': 1, 'b': 2})
+    print("\nSeries from dictionary:\n", dict_s)
 
-series6 = pd.Series([1, 2, 3, 4, 5])
-# Access Series through Index
-print("Index Value:-", series6[0])
+    # Operations on Series
+    series6 = pd.Series([1, 2, 3, 4, 5])
+    print("\nIndexing (First element):\n", series6[0])
+    print("Max value:\n", max(series6))
+    print("Min value:\n", min(series6))
+    print("Slicing:\n", series6[0:3])
+    print("Values greater than 3:\n", series6[series6 > 3])
 
-# Max Value from Series
-print("Max Value:-", max(series6))
+    # Arithmetic operations
+    series7 = pd.Series([1, 2, 3, 4, 5])
+    print("\nAdding two Series:\n", series6 + series7)
 
-# Min Value from Series
-print("Min Value:-", min(series6))
+    # Adding Series of different lengths
+    series8 = pd.Series([1, 2, 3])
+    print("\nAdding Series of different lengths:\n", series7 + series8)
 
-# Slicing the Series
-print(series6[0:3])
+    # Creating Series with NaN values
+    s = pd.Series([1, 2, 3, 4, 5, 6, np.nan, 8, 9, 10])
+    print("\nSeries with NaN values:\n", s)
 
-# Print Values from Series Greater than 3
-print(series6[series6 > 3])
+    # Additional Operations
+    # Mean, Median, Standard Deviation
+    print("\nMean of series6:", series6.mean())
+    print("Median of series6:", series6.median())
+    print("Standard Deviation of series6:", series6.std())
 
-series7 = pd.Series([1, 2, 3, 4, 5])
+def main():
+    """
+    Main function to demonstrate the creation and manipulation of Pandas Series.
+    """
+    create_series_examples()
 
-# Adding Two Series
-print(series6 + series7)
-
-series8 = pd.Series([1, 2, 3])
-
-# Adding Two Series with Different Length
-print(series7 + series8)
-
-# Creating Series with Some empty Values
-s = pd.Series([1, 2, 3, 4, 5, 6, np.nan, 8, 9, 10])
-print(s)
+if __name__ == "__main__":
+    main()
