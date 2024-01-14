@@ -1,20 +1,56 @@
 import smtplib
 
-EMAIL_HOST_USER = 'sender@gmail.com'
-EMAIL_HOST_PASSWORD = ''
+def send_email_to_multiple_users(subject, message_body, recipient_emails):
+    """
+    Send an email to multiple users using Gmail's SMTP server.
 
-# list of email_id to send the mail
-list1 = ["user1@gmail.com", "user2@gmail.com"]
-s = smtplib.SMTP('smtp.gmail.com', 587)
-s.starttls()
-s.login(EMAIL_HOST_USER, EMAIL_HOST_PASSWORD)
-Text = "Message You Need to Send Write Here"
-SUBJECT = "Testing sending using gmail"
-message = 'Subject: {}\n\n{}'.format(SUBJECT, Text)
+    Args:
+    subject (str): Subject line of the email.
+    message_body (str): The main content of the email.
+    recipient_emails (list): List of recipient email addresses.
 
-for li in list1:
-	s.sendmail(EMAIL_HOST_USER, li, message)
-s.quit()
+    Returns:
+    None
+    """
+    try:
+        # SMTP server configuration
+        smtp_server = 'smtp.gmail.com'
+        smtp_port = 587
+        sender_email = 'sender@gmail.com'  # Replace with your email
+        sender_password = ''  # Replace with your email password
+
+        # Establish a secure session with the server
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+
+        # Login to the email account
+        server.login(sender_email, sender_password)
+
+        # Prepare the email message
+        message = f'Subject: {subject}\n\n{message_body}'
+
+        # Sending the email to each recipient in the list
+        for recipient_email in recipient_emails:
+            server.sendmail(sender_email, recipient_email, message)
+
+        # Terminate the SMTP session
+        server.quit()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+def main():
+    """
+    Main function to send an email to multiple users.
+    """
+    subject = "Testing sending using gmail"
+    message_body = "Message You Need to Send Write Here"
+    recipient_emails = ["user1@gmail.com", "user2@gmail.com"]
+
+    send_email_to_multiple_users(subject, message_body, recipient_emails)
+    print("Emails sent successfully.")
+
+if __name__ == "__main__":
+    main()
 
 # If you get the error "smtplib.SMTPAuthenticationError:"
 
