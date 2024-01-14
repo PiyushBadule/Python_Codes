@@ -1,6 +1,5 @@
 # input:- "I am Piyush"
 # output:-  hsuyiP ma I
-print("Short:-", a1[::-1])
 def reverse_string(input_string):
     """
     Reverses the given string.
