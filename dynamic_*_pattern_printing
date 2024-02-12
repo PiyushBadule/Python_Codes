@@ -1,0 +1,24 @@
+def print_matrix_pattern(rows, cols):
+    """
+    Prints a matrix pattern with '*' for the given number of rows and columns.
+
+    Args:
+        rows (int): The number of rows in the matrix.
+        cols (int): The number of columns in the matrix.
+    """
+    try:
+        matrix = ['* ' * cols for _ in range(rows)]
+        print('\n'.join(matrix))
+    except Exception as e:
+        print("An error occurred:", e)
+
+def main():
+    try:
+        rows = int(input("Enter number of rows: "))
+        cols = int(input("Enter number of columns: "))
+        print_matrix_pattern(rows, cols)
+    except ValueError:
+        print("Please enter valid integer values for rows and columns.")
+
+if __name__ == "__main__":
+    main()
