@@ -1,0 +1,42 @@
+class Custom:
+    """
+    Decorator class that squares the result of the decorated function.
+    """
+    def __init__(self, func):
+        """
+        Initialize the Custom decorator with the provided function.
+        
+        Args:
+        - func: The function to be decorated.
+        """
+        self.func = func
+        
+    def __call__(self, num1, num2):
+        """
+        Call method that executes when the decorated function is called.
+        
+        Args:
+        - num1: The first number.
+        - num2: The second number.
+        
+        Returns:
+        - The square of the result of the decorated function.
+        """
+        result = self.func(num1, num2)
+        return result ** 2
+
+@Custom        
+def add(num1, num2):
+    """
+    Function that adds two numbers.
+    
+    Args:
+    - num1: The first number.
+    - num2: The second number.
+    
+    Returns:
+    - The sum of num1 and num2.
+    """
+    return num1 + num2
+    
+print(add(3, 2))
